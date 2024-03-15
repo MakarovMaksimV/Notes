@@ -7,7 +7,6 @@ class View:
         while True:
             command = input()
             if command == 'add':
-                # id = int(input("Введите id заметки: "))
                 head = input("Введите заголовок заметки: ")
                 content = input("Введите содержание заметки: ")
                 Notes.add(list,head,content)
@@ -20,7 +19,9 @@ class View:
                 id = int(input('Введите ID заметки: '))
                 Notes.delete(list,id)
             elif command == 'read':
-                Notes.read(list)
+                print ("Для чтения всех заметок введите - all")
+                id = input('Введите ID заметки: ')
+                Notes.read(list,id)
             elif command == 'exit':
                 break
             else:

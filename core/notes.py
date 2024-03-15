@@ -6,8 +6,9 @@ class Notes:
         note = {'id': id, 'head': head, 'content': content, 'date': date.strftime('%Y-%m-%d %H:%M:%S')}
         list.append(note)
         Repository.save(list)
-    def read(list):
-        Repository.read(list)
+    def read(list,id):
+        Repository.read(list,id)
+
     def edit(list,id,new_head,new_content):
         found = False
         for i, note in enumerate(list):
