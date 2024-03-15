@@ -8,7 +8,6 @@ class Notes:
         Repository.save(list)
     def read(list,id):
         Repository.read(list,id)
-
     def edit(list,id,new_head,new_content):
         found = False
         for i, note in enumerate(list):

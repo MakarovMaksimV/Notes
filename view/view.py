@@ -1,3 +1,5 @@
+import datetime
+
 from core.notes import Notes
 class View:
     def run(list):
@@ -5,6 +7,7 @@ class View:
               "\nEdit-редактировать заметку\nRead-прочитать все заметки"
               "\nDelete-удалить заметку\nExit-выход")
         while True:
+            print("Введите команду: ")
             command = input()
             if command == 'add':
                 head = input("Введите заголовок заметки: ")
