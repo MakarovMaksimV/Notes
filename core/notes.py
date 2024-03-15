@@ -8,27 +8,29 @@ class Notes:
         Repository.save(list)
     def read(list):
         Repository.read(list)
-    def edit(list,new_id,new_head,new_content):
-        note_index = -1
-        for index, note in enumerate(list):
+    def edit(list,id,new_head,new_content):
+        found = False
+        for i, note in enumerate(list):
             if note['id'] == id:
-                note_index = index
-                break
-        if note_index != -1:
-            list[note_index]['head'] =  new_head
-            list[note_index]['content'] =  new_content
-            list[note_index]['date'] =  datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            Repository.save(list)
-            print("Заметка отредактирована")
-        else:
-             print("Заметка не найдена")
+                list[i]['head'] = new_head
+                list[i]['content'] = new_content
+                list[i]['date'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                print("Заметка отредактирована")
+                found = True
+        if not found:
+            print("Заметка с таким ID не найдена")
+        Repository.save(list)
 
     def delete(list,id):
+        found = False
         for i, note in enumerate(list):
             if int(note['id']) == id:
                 list.pop(i)
                 Repository.save(list)
                 print("Заметка удалена")
+                found = True
+        if not found:
+            print("Заметка с таким ID не найдена")
 
                     
 

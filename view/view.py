@@ -13,7 +13,9 @@ class View:
                 Notes.add(list,head,content)
             elif command == 'edit':
                 id = int(input('Введите ID заметки: '))
-                Notes.edit(list,id,input('Введите новый заголовок: '), input('Введите новое содержание заметки: '))
+                head = input('Введите новый заголовок: ')
+                content = input('Введите новое содержание заметки: ')
+                Notes.edit(list,id,head,content)
             elif command == 'delete':
                 id = int(input('Введите ID заметки: '))
                 Notes.delete(list,id)

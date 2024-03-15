@@ -1,6 +1,4 @@
-import csv
 import json
-
 
 class Repository:
     def save(list):
